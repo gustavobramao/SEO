@@ -1,0 +1,18 @@
+#Extracting meta tags and output list into dataframe
+
+library(‘httr’)
+library(‘rvest’)
+Data<-data.frame(Pages=c(
+#itroduce URLs that you want to scrape
+ ))
+ 
+ 
+description <- sapply(Data$Pages, function(url){
+ url %>% 
+ as.character() %>% 
+ read_html() %>% 
+ html_nodes(xpath = ‘//meta’) %>% 
+ html_attr(‘content’)
+})
+#Output into a DataFrame.
+d.set<-as.data.frame(description)
