@@ -1,11 +1,11 @@
 #Extracting meta tags and output list into dataframe
-```
+
 library(‘httr’)
 library(‘rvest’)
 Data<-data.frame(Pages=c(
 #itroduce URLs that you want to scrape
  ))
- ```
+ 
  
 description <- sapply(Data$Pages, function(url){
  url %>% 
