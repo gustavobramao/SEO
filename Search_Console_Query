@@ -1,0 +1,17 @@
+#Filter per query
+
+install.packages("googleAuthR") 
+install.packages("searchConsoleR")
+
+library(searchConsoleR)
+library(googleAuthR) 
+library(dplyr)
+
+scr_auth()
+sc_websites <- list_websites()
+
+ES <- search_analytics("https://www.bershka.com/es/", "2018-10-29", "2018-11-01", c("query", "page"), 
+                       dimensionFilterExp = c("device==MOBILE", "query~~fiesta"), 
+                       searchType="web", rowLimit = 50000)
+                       
+                       
