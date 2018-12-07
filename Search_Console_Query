@@ -14,4 +14,9 @@ ES <- search_analytics("https://www.bershka.com/es/", "2018-10-29", "2018-11-01"
                        dimensionFilterExp = c("device==MOBILE", "query~~fiesta"), 
                        searchType="web", rowLimit = 50000)
                        
-                       
+  
+  ##query does not contain brand
+  
+  ES <- search_analytics("https://www.bershka.com/es/", "2018-07-01", "2018-12-07", c("page", "date"), 
+                       dimensionFilterExp = c("device==MOBILE" , "query!~Be", "query!~BSK"), 
+                       searchType="web", rowLimit = 50000)
